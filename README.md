@@ -17,3 +17,13 @@ void draw() {
  ellipse(mouseX, mouseY, 80, 80);
 }
 
+//example 3-7 work 
+
+void setup() 
+{
+ size(120, 120);
+ arc(60,60,80,80,radians(45),radians(310));
+ ellipse(65,40,10,10);
+}
+
+
