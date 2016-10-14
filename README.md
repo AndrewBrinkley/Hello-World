@@ -60,6 +60,36 @@ fill(0,45,121);
 quad(300,290,300,500,500,450,375,255);
 }
 
+// Monster 
+
+strokeWeight(14);
+  background(196, 255,248); 
+    
+    fill(255, 0, 0);
+    beginShape();
+    vertex(300,250);
+    vertex(250,300);
+    vertex(350,300);
+    vertex(150,400);
+    vertex(450,400);
+    vertex(250,500);
+    endShape();
+
+    fill(0, 255, 0); 
+    beginShape();
+    vertex(250,300);
+    vertex(300,250);
+    vertex(300,350);
+    vertex(400,150);
+    vertex(400,450);
+    vertex(500,250);
+    endShape();
+    
+    strokeWeight(2);
+    line(300,300,100,300);
+    line(300,300,300,100);
+
+}
 
 
 
