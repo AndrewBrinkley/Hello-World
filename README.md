@@ -62,7 +62,11 @@ quad(300,290,300,500,500,450,375,255);
 
 // Monster 
 
-strokeWeight(14);
+void setup() 
+{
+  size(600,600);
+  smooth();
+  strokeWeight(14);
   background(196, 255,248); 
     
     fill(255, 0, 0);
@@ -90,8 +94,6 @@ strokeWeight(14);
     line(300,300,300,100);
 
 }
-
-
 
 
 
