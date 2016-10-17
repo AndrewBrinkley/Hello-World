@@ -140,3 +140,87 @@ ellipse(x+41, ny+6, 3, 3);
 }
 
 
+
+//part 3
+
+int x = 300;
+int y = 300;
+int a = 200;
+int b = 350;
+int c = 250;
+int radius = 40;
+
+
+   void setup()
+    {  
+    background(63,111,240);
+    size(600,600);
+    }
+  
+  void draw()
+  {
+    
+    strokeWeight(14);
+       
+    
+      if (keyPressed && (key == CODED)) 
+       { 
+         if (keyCode == UP) 
+         { 
+           y--;
+         } 
+         else if (keyCode == DOWN) 
+         {
+           y++;
+         }
+       }    
+       
+       if (keyPressed && (key == CODED)) 
+       { 
+         if (keyCode == LEFT) 
+         { 
+           x--;
+         } 
+         else if (keyCode == RIGHT) 
+         {
+           x++;
+         }
+       }    
+
+    fill(255,243,103);
+    ellipse(x,y,400,400);
+    
+     if (keyPressed) {
+ if ((key == 'q') || (key == 'Q')) {
+ fill(239,26,255);
+ ellipse(x,y,400,400);
+ }
+ else if ((key == 'w') || (key == 'W')) {
+ fill(8,252,5);
+ ellipse(x,y,400,400);
+ }
+ }
+    fill(255,243,103);
+   
+   strokeWeight(7);
+    fill(255,255,255);
+    ellipse(a,c,100,100);
+    ellipse(b,c,100,100);
+    
+    float d = dist(mouseX, mouseY, a, c);
+    if (d < radius) 
+    {
+      fill(0);
+      ellipse(mouseX,mouseY,radius,radius);
+    }
+     float f = dist(mouseX, mouseY, b, c);
+    if (f < radius) 
+    {
+      fill(0);
+      ellipse(mouseX,mouseY,radius,radius);
+    }
+   
+
+    line(200,400,400,400);
+  }
+
