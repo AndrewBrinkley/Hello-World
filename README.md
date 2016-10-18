@@ -224,3 +224,26 @@ int radius = 40;
     line(200,400,400,400);
   }
 
+//example 6-7
+
+PFont font;
+void setup() {
+ size(480, 120);
+ font = loadFont("DialogInput-30.vlw");
+ textFont(font);
+}
+void draw() {
+ background(102);
+ text("andrew brinkley ", 26, 30, 240, 400);
+}
+
+PFont font;
+void setup() {
+ size(480, 120);
+ font = loadFont("DialogInput-30.vlw");
+ textFont(font);
+}
+void draw() {
+ background(102);
+ text("andrew brinkley ", 26, 30, 240, 400);
+}
