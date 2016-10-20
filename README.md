@@ -266,3 +266,105 @@ void draw() {
  }
  arc(x, 60, radius, radius, 0.52, 5.76);
 }
+
+
+// Pong ?
+
+int radius = 25;
+float direction = 1;
+float direction2 =.75;
+float x = 600;
+float y = 300;
+float time;
+int x2 = 100;
+int y2= 250;
+int z = 1050;
+int score ;
+float speed = 10;
+
+
+void setup() {
+  size(1200,600);
+  smooth();
+ // background(0);
+  ellipseMode(RADIUS);
+}
+
+void draw() 
+{
+  background(0);
+   
+   fill(225);
+   text("score:" + score , width/2, 50 );
+   
+   time= millis();
+   fill(255);
+   text("Time:" + time/1000, width/2, height-50);
+   
+   if (keyPressed && (key == CODED)) 
+   { 
+     if (keyCode == UP) 
+     { 
+     y2 = y2 - 10;
+     } 
+     else if (keyCode == DOWN) 
+     {
+     y2 = y2 + 10;
+     }
+   }    
+
+   if (keyPressed && (key == CODED)) 
+   { 
+      if (keyCode == LEFT) 
+      { 
+      x2 = x2 - 10;
+      } 
+      else if (keyCode == RIGHT) 
+      {
+      x2 = x2 + 10 ;
+      }
+   }    
+      rect(x2,y2,25,100);
+  
+   if (keyPressed && (key == CODED)) 
+   { 
+      if (keyCode == UP) 
+      { 
+      y2 -- ;
+      } 
+      else if (keyCode == DOWN) 
+      {
+      y2 ++ ;
+      }
+   }    
+
+   if (keyPressed && (key == CODED)) 
+   { 
+      if (keyCode == LEFT) 
+      { 
+      x2 -- ;
+      } 
+      else if (keyCode == RIGHT) 
+      {
+      x2 ++ ;
+      }
+   }    
+   
+      
+     //  rect(z,y2,25,100);
+  
+  
+      x += speed * direction ;
+      if ((x > width-radius) || (x < radius) || (x < x2 + radius ))
+      {
+       direction = -direction ;
+       score += 1;
+      }
+      y += speed * direction2;
+      if ((y > height-radius) || (y < radius))
+      {
+       direction2 = -direction2;
+       score += 1;
+      }
+      ellipse(x,y,radius,radius);
+}
