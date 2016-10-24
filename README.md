@@ -404,3 +404,58 @@ void owl(int x, int y, int g, float s) {
  quad(0, -58, 4, -51, 0, -44, -4, -51); // Beak
  popMatrix();
 } 
+
+
+//spinsagram
+
+PImage img;
+int x ;
+int y ;
+int r ; 
+
+
+void setup() {
+  background(0);
+  size(600,600);
+  imageMode(CENTER);
+ img = loadImage("yak.png");
+}
+void draw() {
+   
+  if (key== CODED && keyCode == LEFT )
+  {
+    r-- ;
+  } else if ( key== CODED && keyCode == RIGHT )
+  {
+    r++ ;
+  }
+  
+  if (key== CODED && keyCode == UP)
+  {
+    x++ ;
+  } else if ( key== CODED && keyCode == DOWN)
+  {
+    x-- ;
+  }
+  if (keyPressed && key == 'r')
+  {
+    tint(255,0,0,255);
+  }
+   if (keyPressed && key == 'g')
+  {
+    tint(0,255,0,255);
+  }
+   if (keyPressed && key == 'b')
+  {
+    tint(0,0,255,255);
+  }
+  if (keyPressed && key == 'z')
+  {
+    tint(144,144,144,255);
+  }
+  
+  
+  translate(width/2,height/2);
+  rotate(radians(r));
+  image(img,0,0,200+x,200+x);
+}
