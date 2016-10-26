@@ -459,3 +459,53 @@ void draw() {
   rotate(radians(r));
   image(img,0,0,200+x,200+x);
 }
+
+
+//  4 buttons one arduino 
+
+// constants won't change. They're used here to 
+// set pin numbers:
+const int buttonPin1 = 1; 
+const int buttonPin2 = 2;
+const int buttonPin3 = 3;
+const int buttonPin4 = 4;  // the number of the pushbutton pin
+const int ledPinWrong =  6; // the number of the LED pin
+const int ledPinRight =  7;
+
+// variables will change:
+int buttonState1 = 0;
+int buttonState2 = 0;
+int buttonState3 = 0;
+int buttonState4 = 0;// variable for reading the pushbutton status
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPinWrong, OUTPUT); 
+  pinMode(ledPinRight, OUTPUT);      
+  // initialize the pushbutton pin as an input:
+  pinMode(buttonPin1, INPUT); 
+  pinMode(buttonPin2, INPUT);
+  pinMode(buttonPin3, INPUT);
+  pinMode(buttonPin4, INPUT);    
+}
+
+void loop(){
+  // read the state of the pushbutton value:
+  buttonState1 = digitalRead(buttonPin1);
+  buttonState2 = digitalRead(buttonPin2);
+  buttonState3 = digitalRead(buttonPin3);
+  buttonState4 = digitalRead(buttonPin4);
+  // check if the pushbutton is pressed.
+  // if it is, the buttonState is HIGH:
+  if (buttonState1 == HIGH) {     
+         
+    digitalWrite(ledPinWrong, HIGH);  
+  } 
+    if (buttonState1== LOW && buttonState2== LOW && buttonState3== LOW && buttonState4 == LOW){
+    // turn LED off:
+    digitalWrite(ledPinRight,HIGH);
+    digitalWrite(ledPinWrong,LOW);
+    
+  }
+   
+}
