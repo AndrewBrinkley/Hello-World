@@ -699,3 +699,38 @@ if (temperature < targetTemp -3) {
 float getVoltage(int pin){
  return (analogRead(pin) * .004882814); 
 }
+
+
+// build 11
+#include<Servo.h>
+Servo myservo;
+int Z = 100;
+int ledPin = 2;
+
+
+void setup()   {                
+  myservo.attach(7);
+  pinMode(ledPin, OUTPUT);     
+}
+
+// the loop() method runs over and over again,
+// as long as the Arduino has power
+
+void loop()                     
+{
+ digitalWrite(ledPin, HIGH);
+ delay(Z);
+  if (digitalRead(13)==LOW)
+  {
+    myservo.write(5) ;
+  }
+
+digitalWrite(ledPin, LOW);
+delay(Z);
+  if (digitalRead(13)==HIGH)
+  {
+    myservo.write(170) ;
+  }
+  
+                   
+}
